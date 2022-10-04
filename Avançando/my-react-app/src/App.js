@@ -36,12 +36,12 @@ function App() {
        {/*Props*/}
        <ShowUserName name= {userName}/>
        {/*Destructuring*/}
-       <CarDetails brand="Tesla" km={10000} color="Azul"/>
+       <CarDetails brand="Tesla" km={10000} color="Azul" novo={true} />
 
        {/*Reaproveitamento*/}
-       <CarDetails brand="Ford" km={20000} color="Vermelho"/>
+       <CarDetails brand="Ford" km={20000} color="Vermelho" novo={false} />
        {/*Reaproveitamento*/}
-       <CarDetails brand="Renault" km={2000} color="Preto"/>
+       <CarDetails brand="Renault" km={2000} color="Preto" novo={true} />
     </div>
   );
 }
