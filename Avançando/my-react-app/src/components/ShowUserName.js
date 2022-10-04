@@ -5,7 +5,7 @@ const ShowUserName = (props) => {
     <div>
         <h2>
             O nome do usuário: {props.name}
-        </h2>
+        </h2> 
     </div>
   )
 }

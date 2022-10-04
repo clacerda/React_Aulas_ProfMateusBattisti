@@ -6,7 +6,7 @@ const CarDetails = ({brand, km, color}) => {
         <h2>
             <ul>
                 <li>
-                    MARCA: {brand}
+                    MARCA: {brand} 
                 </li>
                 <li>
                     KM: {km}

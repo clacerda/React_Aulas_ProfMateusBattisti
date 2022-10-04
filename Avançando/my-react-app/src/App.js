@@ -30,7 +30,7 @@ function App() {
        {/*<ManageData /> */}
 
 
-       <ListRender />
+       <ListRender /> 
 
        <ConditionalRender />
        {/*Props*/}
