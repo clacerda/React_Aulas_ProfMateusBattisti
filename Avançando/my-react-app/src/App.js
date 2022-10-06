@@ -7,9 +7,10 @@ import ConditionalRender from './components/ConditionalRender';
 import ListRender from './components/ListRender';
 import ShowUserName from './components/ShowUserName';*/
 import Container from './components/Container'
-import ExecuteFunction from './components/ExecuteFunction';
-import Message from './components/Message';
-import ChangeMessageState from './components/ChangeMessageState';
+// import ExecuteFunction from './components/ExecuteFunction';
+// import Message from './components/Message';
+// import ChangeMessageState from './components/ChangeMessageState';
+import UserDetail from './components/UserDetail';
 
 //import MinhaFoto from './assets/1517517204212.jpg'
 //import ManageData from './components/ManageData';
@@ -20,9 +21,9 @@ function App() {
   //const [userName] = useState("Claudio")
 
 
-  function showMessage(){
-    console.log("Evento teste")
-  }
+  // function showMessage(){
+  //   console.log("Evento teste")
+  // }
 
   /*const cars = [
     {id: 1, brand: "Ferrari", color: "Amarelo", newCar: true, km: 0},
@@ -30,11 +31,17 @@ function App() {
     {id: 3, brand: "Monza", color: "azul", newCar: false, km: 20}
   ]*/
 
-  const [message, setMessage] = useState("")
+  // const [message, setMessage] = useState("Holá que tal?")
 
-  const handleMessage = (msg) =>{
-    setMessage(msg)
-  }
+  // const handleMessage = (msg) =>{
+  //   setMessage(msg)
+  // }
+
+  const peoples = [
+    {id: 1, name: "Claudio", age: 33, profession: "Analista"},
+    {id: 2, name: "Andrea", age: 34, profession: "Designer"},
+    {id: 3, name: "Diana", age: 2, profession: "AuAu"}
+  ]
 
   return (
     <div className="App">
@@ -85,12 +92,26 @@ function App() {
           <h5>E este é o conteúdo</h5>
         </Container>
 
-        {/*Executar função*/}
-        <ExecuteFunction myFunction={showMessage} />
+        {/*Executar função
+        <ExecuteFunction myFunction={showMessage} /> */}
 
-        {/*State Lift*/}
+        {/*State Lift
         <Message msg={message} />
-        <ChangeMessageState handleMessage={handleMessage} />
+      <ChangeMessageState handleMessage={handleMessage} /> */}
+
+      {/*Desafio*/}
+      {
+        peoples.map((people) => (
+              <UserDetail  
+                        key = {people.id}
+                        name = {people.name}
+                        age = {people.age}
+                        profession = {people.profession}
+                        />
+        ))
+      }
+
+      
     </div>
   );
 }
