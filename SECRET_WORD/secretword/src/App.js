@@ -15,6 +15,9 @@ const stages = [
   {id: 3, name: "end"},
 ]
 
+const guessesQty = 3;
+const scoreQty = 50;
+
 function App() {
 
     const [gameStage, setGameStage] = useState(stages[0].name)
@@ -26,8 +29,8 @@ function App() {
 
     const [guessedLetters, setGuessedLetters] = useState([]);
     const [wrongLetters, setWrongLetters] = useState([]);
-    const [guesses, setGuesses] = useState(3)
-    const [score, setScore] = useState(0);
+    const [guesses, setGuesses] = useState(guessesQty)
+    const [score, setScore] = useState(scoreQty);
 
     const pickWordAndPickCategory = () => {
     // pick a rendom category
@@ -47,9 +50,9 @@ function App() {
   }
 
 
-  // starts the secret word game
-  const startGame = () =>{
-    //pick word and pick category
+   // starts the secret word game
+   const startGame = () =>{
+  //pick word and pick category
    const {word, category } =  pickWordAndPickCategory();
 
    // create an array of letters
@@ -70,10 +73,45 @@ function App() {
 
   // process the letter input
   const verifyLetter = (letter) => {
-    console.log(letter)
+
+    const normalizedLetter = letter.toLowerCase();
+
+    // check if letter has already been utilized;
+    if(guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter)){
+        return;
+    }
+
+    // push guessed letter or remove a guess
+    if(letters.includes(normalizedLetter)){
+      setGuessedLetters((actualGuessedLetters) => [...actualGuessedLetters, normalizedLetter]);
+    }else{
+      setWrongLetters((actualWrongLetters) => [...actualWrongLetters, normalizedLetter]);
+
+      setGuesses((actualGuesses) => actualGuesses  -1);
+     
+    } 
   }
 
+  const clearLetterStates = () => {
+    setGuessedLetters([]);
+    setWrongLetters([]);
+  }
+
+   useEffect(() => {
+      if(guesses <= 0) {
+        
+        // reset
+        clearLetterStates();
+
+        setGameStage(stages[2].name);
+      }
+   }, [guesses])
+
+  // Restart the game
   const retry = () => {
+    setScore(0);
+    setGuesses(guessesQty);
+    
     setGameStage(stages[0].name)
   }
 
@@ -88,7 +126,7 @@ function App() {
                                       wrongLetters = {wrongLetters}
                                       guesses = {guesses}
                                       score = {score} />}
-       {gameStage === 'end' && <GameOver retry={retry} />}
+       {gameStage === 'end' && <GameOver retry={retry} score={score}/>}
     </div>
   );
 }
