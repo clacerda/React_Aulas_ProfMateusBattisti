@@ -3,7 +3,7 @@ import './App.css';
 // REACT
 import {useCallback, useEffect, useState} from 'react';
 //Dados
-import {wordList, wordsList} from "./data/word"
+import {wordsList} from "./data/word"
 //Components
 import StartScreen from './components/StartScreen';
 import Game from './components/Game';
@@ -16,7 +16,7 @@ const stages = [
 ]
 
 const guessesQty = 3;
-const scoreQty = 50;
+const scoreQty = 0;
 
 function App() {
 
@@ -32,7 +32,7 @@ function App() {
     const [guesses, setGuesses] = useState(guessesQty)
     const [score, setScore] = useState(scoreQty);
 
-    const pickWordAndPickCategory = () => {
+    const pickWordAndPickCategory = useCallback(() => {
     // pick a rendom category
     const categories = Object.keys(words);
     const category = categories[Math.floor(Math.random() * Object.keys(categories).length)];
@@ -47,29 +47,32 @@ function App() {
     // console.log(word)
     // console.log(words[category])
 
-  }
+  }, [words]);
 
 
    // starts the secret word game
-   const startGame = () =>{
-  //pick word and pick category
-   const {word, category } =  pickWordAndPickCategory();
+   const startGame = useCallback(() =>{
+    // clear all letters
+    clearLetterStates();
 
-   // create an array of letters
-   let wordLetters = word.split("")
+    //pick word and pick category
+    const {word, category } =  pickWordAndPickCategory();
 
-   wordLetters = wordLetters.map((letra) => letra.toLowerCase());
+    // create an array of letters
+    let wordLetters = word.split("")
 
-   console.log(word, category, wordLetters);
+    wordLetters = wordLetters.map((letra) => letra.toLowerCase());
+
+    console.log(word, category, wordLetters);
 
 
-   //fill states
-   setPickdWord(word);
-   setPickedCategory(category);
-   setLetters(wordLetters);
+    //fill states
+    setPickdWord(word);
+    setPickedCategory(category);
+    setLetters(wordLetters);
 
-   setGameStage(stages[1].name);
-  }
+    setGameStage(stages[1].name);
+  }, [pickWordAndPickCategory]);
 
   // process the letter input
   const verifyLetter = (letter) => {
@@ -105,7 +108,28 @@ function App() {
 
         setGameStage(stages[2].name);
       }
-   }, [guesses])
+   }, [guesses]);
+
+
+
+   //check win condition
+   useEffect(() => {
+
+    const uniqueLetters = [...new Set(letters)]
+
+    //win condition
+    if(guessedLetters.length === uniqueLetters.length){
+      //add score
+      setScore((actualScore) => actualScore += 100)
+
+      //restart game with new word
+      startGame();
+
+    }
+
+    console.log(uniqueLetters)
+
+   }, [guessedLetters, letters, startGame]);
 
   // Restart the game
   const retry = () => {
