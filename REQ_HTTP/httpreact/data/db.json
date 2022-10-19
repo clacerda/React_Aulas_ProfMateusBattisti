@@ -1,19 +1,54 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Camisa",
-        "price": 59.9
-      },
-      {
-        "id": 2,
-        "name": "Calça vermelha",
-        "price": 90
-      },
-      {
-        "id": 3,
-        "name": "Boné aba reta",
-        "price": 29.9
-      }
-    ]
-  }
+  "products": [
+    {
+      "id": 1,
+      "name": "Camisa",
+      "price": 59.9
+    },
+    {
+      "id": 2,
+      "name": "Calça vermelha",
+      "price": 90
+    },
+    {
+      "id": 3,
+      "name": "Boné aba reta",
+      "price": 29.9
+    },
+    {
+      "name": "teste",
+      "price": "123",
+      "id": 4
+    },
+    {
+      "name": "teste",
+      "price": "123",
+      "id": 5
+    },
+    {
+      "name": "claudio",
+      "price": "123",
+      "id": 6
+    },
+    {
+      "name": "teste",
+      "price": "123",
+      "id": 7
+    },
+    {
+      "name": "teclado",
+      "price": "112",
+      "id": 8
+    },
+    {
+      "name": "teclado",
+      "price": "1122",
+      "id": 9
+    },
+    {
+      "name": "cadeira",
+      "price": "200",
+      "id": 10
+    }
+  ]
+}
