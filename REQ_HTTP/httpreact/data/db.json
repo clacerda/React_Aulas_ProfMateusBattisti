@@ -49,6 +49,11 @@
       "name": "cadeira",
       "price": "200",
       "id": 10
+    },
+    {
+      "name": "placa",
+      "price": "10",
+      "id": 11
     }
   ]
 }
