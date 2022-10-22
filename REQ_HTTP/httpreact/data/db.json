@@ -64,6 +64,21 @@
       "name": "chop",
       "price": "12",
       "id": 13
+    },
+    {
+      "name": "suporte 1",
+      "price": "12",
+      "id": 14
+    },
+    {
+      "name": "suporte 1",
+      "price": "12",
+      "id": 15
+    },
+    {
+      "name": "as",
+      "price": "1",
+      "id": 16
     }
   ]
 }
