@@ -13,7 +13,7 @@ function App() {
   const url = "http://localhost:3000/products";
 
    //4 - custom hook
-   const {data : items, httpConfig, loading, erro} = useFetch(url);
+   const {data : items, httpConfig, loading, error} = useFetch(url);
 
   //  console.log(data)
 
@@ -68,8 +68,8 @@ function App() {
       <h1>Lista de produtos</h1>
       {/* 6 - Loading */}
       {loading && <p> Carregando dados...</p>}
-      {erro & <p>{erro}</p>}
-      {!erro && (<ul>
+      {error && <p>{error}</p> } {console.log(error)}
+      {!error && (<ul>
         {items && items.map((product) => (
           <li key={product.id}>{product.name} - R$: {product.price}</li>
         ))}
