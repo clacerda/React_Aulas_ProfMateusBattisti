@@ -64,18 +64,18 @@
 // console.log(avaliableUsers)
 
 
-//4 MAP
-const products = [
-    {name: 'camise', price: 10.00, category:'roupas'},
-    {name: 'chaleira', price: 40.00, category:'eletro'},
-    {name: 'fogão', price: 400.00, category:'eletro'},
-    {name: 'cacalça jeans ise', price: 60.00, category:'roupas'},
-]
+// //4 MAP
+// const products = [
+//     {name: 'camise', price: 10.00, category:'roupas'},
+//     {name: 'chaleira', price: 40.00, category:'eletro'},
+//     {name: 'fogão', price: 400.00, category:'eletro'},
+//     {name: 'cacalça jeans ise', price: 60.00, category:'roupas'},
+// ]
 
-products.map((product) => {
-    if (product.category === 'roupas') {
-        product.onSale = 'true'
-    }
-})
+// products.map((product) => {
+//     if (product.category === 'roupas') {
+//         product.onSale = 'true'
+//     }
+// })
 
-console.log(products)
+// console.log(products)
