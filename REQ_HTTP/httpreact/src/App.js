@@ -12,55 +12,31 @@ function App() {
 
   const url = "http://localhost:3000/products";
 
+  let idProduct = 1;
+ 
    //4 - custom hook
-   const {data : items, httpConfig, loading, error} = useFetch(url);
-
-  //  console.log(data)
-
-  //1 - resgatando dados 
-  // useEffect( () => {
-  //    async function fetchData() {
-  //       const res = await fetch(url)
-  //       const data = await res.json()
-
-  //       setProducts(data)
-  //    }
-
-  //    fetchData();
-
-  // }, []);
-
-  // 2 - add produtos
+   const {data : items, httpConfig, loading, error } = useFetch(url, idProduct);
+ 
 
   const handleSubmit = async (event) => {
 
         event.preventDefault();
-
+       
         const product = {
           name,
           price,
         };
-
-        // const res = await fetch(url, {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json"
-        //   },
-        //   body: JSON.stringify(product),
-        // });
-        
-        // // 3 - Carregamento dinâmico
-        // const addedProduct = await res.json();
-
-        // setProducts((prevProducts) => [...prevProducts, addedProduct]);
-
-        // 5 - Refatorando POST
-
+         
         httpConfig(product, "POST")
 
         setName("");
         setPrice("");
   };
+
+  const handleDeleteProduct = async (id) => {
+    httpConfig(id, "DELETE")
+      
+  }
  
 
   return (
@@ -71,7 +47,9 @@ function App() {
       {error && <p>{error}</p> } {console.log(error)}
       {!error && (<ul>
         {items && items.map((product) => (
-          <li key={product.id}>{product.name} - R$: {product.price}</li>
+          <li key={product.id}>{product.name} - R$: {product.price}   
+           <button value={product.id} 
+           onClick={() => handleDeleteProduct(product.id)}>Deletar</button> </li>
         ))}
       </ul>)}
 
@@ -85,9 +63,13 @@ function App() {
           <label>
             Preço: <input type="number" name="price" value={price} onChange={(event) => setPrice(event.target.value)}/>
           </label>
+
+             
           {/* 7 - State de loading no post*/}
             {loading && <input type="submit" value="Aguarde"  disabled/>}
             {!loading && <input type="submit" value="Criar" />}
+
+         
         </form>
       </div>
   </div>

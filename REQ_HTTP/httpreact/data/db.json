@@ -16,69 +16,14 @@
       "price": 29.9
     },
     {
-      "name": "teste",
-      "price": "123",
+      "name": "abajour",
+      "price": "100.00",
       "id": 4
     },
     {
-      "name": "teste",
-      "price": "123",
+      "name": "abajour",
+      "price": "100.00",
       "id": 5
-    },
-    {
-      "name": "claudio",
-      "price": "123",
-      "id": 6
-    },
-    {
-      "name": "teste",
-      "price": "123",
-      "id": 7
-    },
-    {
-      "name": "teclado",
-      "price": "112",
-      "id": 8
-    },
-    {
-      "name": "teclado",
-      "price": "1122",
-      "id": 9
-    },
-    {
-      "name": "cadeira",
-      "price": "200",
-      "id": 10
-    },
-    {
-      "name": "placa",
-      "price": "10",
-      "id": 11
-    },
-    {
-      "name": "suporte monitor",
-      "price": "120",
-      "id": 12
-    },
-    {
-      "name": "chop",
-      "price": "12",
-      "id": 13
-    },
-    {
-      "name": "suporte 1",
-      "price": "12",
-      "id": 14
-    },
-    {
-      "name": "suporte 1",
-      "price": "12",
-      "id": 15
-    },
-    {
-      "name": "as",
-      "price": "1",
-      "id": 16
     }
   ]
 }
