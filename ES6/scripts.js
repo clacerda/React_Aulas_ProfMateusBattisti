@@ -1,21 +1,39 @@
-// 1 - var, let e const
-var x = 10
-var y = 15
+// // 1 - var, let e const
+// var x = 10
+// var y = 15
 
-if (y > 10 ) {
-    var x = 5;
-    console.log(x)
+// if (y > 10 ) {
+//     var x = 5;
+//     console.log(x)
+// }
+
+// console.log(x)
+
+// let a = 10
+// let b = 15
+
+
+// if(b > 10) {
+//     let a = 5
+//     console.log(a)
+// }
+
+// console.log(a)
+
+// 2 arrow function
+
+const sum = function sum (a, b) {
+    return a+b;
 }
 
-console.log(x)
+const arrowSum = (a,b) => a+b;
 
-let a = 10
-let b = 15
-
-
-if(b > 10) {
-    let a = 5
-    console.log(a)
+const greeting = (nome) => {
+    if(nome){
+        return "Olá" + nome;
+    }else{
+        return "Olá"
+    }
 }
 
-console.log(a)
+console.log(greeting())
