@@ -110,20 +110,20 @@
 
 // 7 SPREAD OPERATOR
 
-const a1 = [1,2,3]
-const a2 = [4,5,6]
+// const a1 = [1,2,3]
+// const a2 = [4,5,6]
 
-const a3 = [...a1, ...a2]
-console.log(a3)
-
-
-const a4 = [0, ...a1, 4]
-console.log(a4)
+// const a3 = [...a1, ...a2]
+// console.log(a3)
 
 
-const carName = {name: 'Gol'}
-const carBrand = {brand: 'VW'}
-const othersInfos = {km: 100000, price:49000}
+// const a4 = [0, ...a1, 4]
+// console.log(a4)
 
-const car = {...carName, ...carBrand, ...othersInfos}
-console.log(car)
+
+// const carName = {name: 'Gol'}
+// const carBrand = {brand: 'VW'}
+// const othersInfos = {km: 100000, price:49000}
+
+// const car = {...carName, ...carBrand, ...othersInfos}
+// console.log(car)
