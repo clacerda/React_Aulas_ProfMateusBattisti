@@ -79,3 +79,30 @@
 // })
 
 // console.log(products)
+
+
+// // 5 template literals
+// const userName = "Claudio"
+// const age = 30
+
+// console.log(`O nome do usuário é: ${userName} e ele tem ${age} anos.` )
+
+
+
+// 6 Destructuring
+
+// const frutis = ["mação", "laranja", "mamão"]
+
+// const [f1, f2, f3] = frutis
+
+
+// const productDetails = {
+//         name: "mouse",
+//         price: 38.00,
+//         category: "periféricos",
+//         color: "cinza"
+// }
+
+// const {name: productName, price, category: productCategory, color } = productDetails
+
+// console.log(`O nome do produto é ${productName}, custa R$${price}, e pertence a categoria ${productCategory}`)
