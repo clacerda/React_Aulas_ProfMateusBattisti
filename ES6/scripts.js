@@ -127,3 +127,39 @@
 
 // const car = {...carName, ...carBrand, ...othersInfos}
 // console.log(car)
+
+// 8 - class
+class Product {
+    constructor (name, price){
+        this.name = name,
+        this.price = price
+    }
+
+    ProductWithDiscount(discount) {
+        return this.price * ((100 - discount) / 100)
+    }
+}
+
+// const shirt = new Product("CAmisa gola V", 20)
+
+
+// console.log(shirt)
+
+
+// 9 Herança
+
+class ProductsWithAttributes extends Product {
+    constructor(name, price, colors) {
+        super(name, price)
+        this.colors = colors
+    }
+
+    showColores(){
+        console.log("As cores são:")
+        this.colors.forEach((color) => {
+            console.log(color)
+        })
+    }
+}
+
+const hat = new ProductsWithAttributes("Chapéu", 30.00, ["preto", "azul", "verde"])
