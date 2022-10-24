@@ -163,3 +163,7 @@ class ProductsWithAttributes extends Product {
 }
 
 const hat = new ProductsWithAttributes("Chapéu", 30.00, ["preto", "azul", "verde"])
+
+console.log(hat.name)
+console.log(hat.ProductWithDiscount(30))
+console.log(hat.showColores())
