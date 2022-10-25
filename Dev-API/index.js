@@ -27,8 +27,8 @@ app.post('/createproduct', (req, res) => {
         return;
     }
 
-    console.log(name)
-    console.log(price)
+    console.log(name);
+    console.log(price);
 
     res.status(200).json({message: `O produto ${name} foi cadastrado com sucesso no valor de R$${price}`})
 })
