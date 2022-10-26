@@ -14,9 +14,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.json({message: 'Primeira rota criada com sucesso!'});
 });
-
-
-
+ 
 //rota post
 app.post('/createproduct', (req, res) => {
     const name = req.body.name
@@ -30,7 +28,7 @@ app.post('/createproduct', (req, res) => {
     console.log(name);
     console.log(price);
 
-    res.status(200).json({message: `O produto ${name} foi cadastrado com sucesso no valor de R$${price}`})
+    res.status(200).json({message: `O produto ${name} foi cadastrado com sucesso no valor de R$${price}`});
 })
 
 app.listen(3000);
