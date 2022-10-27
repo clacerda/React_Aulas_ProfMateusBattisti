@@ -1,8 +1,21 @@
  
 function App() {
+
+
+  //1 - variáveis
+
+  const name: string = "Claudio";
+  const age: number = 30;
+  const inWorking: boolean = true; 
   return (
     <div className="App">
       <h1>Typescript com React</h1>
+      <h2>Nome: {name}</h2>
+      <p>Idade: {age}</p>
+      {!inWorking && (
+        <p>Está trabalhando</p>
+      )}
+      
     </div>
   );
 }
