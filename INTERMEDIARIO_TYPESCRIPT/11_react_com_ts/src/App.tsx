@@ -5,7 +5,10 @@ import FirtsComponents from "./components/FirtsComponents";
 
 // 5 - desestruturando Props
 import SecondComponent from "./components/SecondComponent";
-import Destructuring from "./components/Destructuring";
+import Destructuring, {Category} from "./components/Destructuring";
+
+//6 - useState
+import State from "./components/State";
 
 function App() {
 
@@ -39,7 +42,10 @@ function App() {
       <Destructuring  title="Primeiro post" 
                       content="TypeScript"
                       commentsQty={10}
-                      tags={["TI", "TypeScript", "Js"]} />
+                      tags={["TI", "TypeScript", "Js"]}
+                      category={Category.PY} />
+
+      <State />
     </div>
   );
 }
