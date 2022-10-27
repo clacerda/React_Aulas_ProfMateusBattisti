@@ -7,6 +7,15 @@ function App() {
   const name: string = "Claudio";
   const age: number = 30;
   const inWorking: boolean = true; 
+
+  //2 - funções
+
+  const userGreeting = (name: string):string => {
+    return `Olá, ${name}`;
+  }
+
+  
+
   return (
     <div className="App">
       <h1>Typescript com React</h1>
@@ -15,7 +24,8 @@ function App() {
       {!inWorking && (
         <p>Está trabalhando</p>
       )}
-      
+
+      <h3>{userGreeting(name)}</h3>
     </div>
   );
 }
