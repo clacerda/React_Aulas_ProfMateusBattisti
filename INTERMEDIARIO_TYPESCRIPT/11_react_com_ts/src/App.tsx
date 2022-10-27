@@ -1,4 +1,8 @@
- 
+import React from "react";
+
+// 4 - importação de componentes
+import FirtsComponents from "./components/FirtsComponents";
+
 function App() {
 
 
@@ -26,6 +30,7 @@ function App() {
       )}
 
       <h3>{userGreeting(name)}</h3>
+      <FirtsComponents/>
     </div>
   );
 }

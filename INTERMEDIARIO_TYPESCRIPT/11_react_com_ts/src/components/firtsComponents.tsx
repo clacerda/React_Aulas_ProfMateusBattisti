@@ -4,7 +4,7 @@ import React from 'react'
 
 type Props = {}
 
-function firtsComponents( ) {
+function FirtsComponents( ) {
   return (
     <div>
         <h1>Meu primeiro componente</h1>
@@ -12,4 +12,4 @@ function firtsComponents( ) {
   )
 }
 
-export default firtsComponents
+export default FirtsComponents
