@@ -1,4 +1,4 @@
-import React from "react";
+import React, {createContext} from "react";
 
 // 4 - importação de componentes
 import FirtsComponents from "./components/FirtsComponents";
@@ -8,10 +8,35 @@ import SecondComponent from "./components/SecondComponent";
 import Destructuring, {Category} from "./components/Destructuring";
 
 //6 - useState
-import State from "./components/State";
+import State from "./components/State"; 
+
+//10 - Context
+import Context from "./components/Context";
 
 //8 - Type
 type textOrNull = string | null;
+
+//9 - Context
+ 
+
+//9 - context
+interface IappContext {
+  language: string;
+  framework: string;
+  projects: number;
+}
+
+export const AppContext = createContext<IappContext | null>(null)
+
+
+
+//9 - context
+const contextValue: IappContext = {
+  language: "Javascript",
+  framework: "Express",
+  projects: 5,
+};
+
 
 function App() {
 
@@ -35,6 +60,7 @@ function App() {
   mySecondText = null;
 
   return (
+    <AppContext.Provider value={contextValue}>
     <div className="App">
       <h1>Typescript com React</h1>
       <h2>Nome: {name}</h2>
@@ -61,7 +87,10 @@ function App() {
         mySecondText &&
         <p>Tem texto na variável 2</p>
       }
+      <Context />
     </div>
+    </AppContext.Provider>
+    
   );
 }
 
