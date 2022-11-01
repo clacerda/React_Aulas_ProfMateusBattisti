@@ -1,8 +1,6 @@
 // 1 - Criar context
 import {createContext, useState} from 'react';
-
  
-
 export const CounterContext = createContext();
 
 // criar provider
