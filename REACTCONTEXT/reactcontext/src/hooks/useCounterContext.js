@@ -8,6 +8,6 @@ export const useCounterContext = () => {
     if (!context) {
         console.log("Contexto não encontrado")
     }
-
+ 
     return context;
 }
