@@ -6,10 +6,15 @@ import ChangeCount from "../components/ChangeCount"
 // 4 refatorando hook
 import { useCounterContext } from "../hooks/useCounterContext"
 
+//5 context mais complexo
+import { useTitleColorContext } from "../hooks/useTitleColorContext";
+
 const Home = () => {
 
 //  const {counter} = useContext(CounterContext)
 const {counter} = useCounterContext();
+
+ 
 
   return (
     <div>
