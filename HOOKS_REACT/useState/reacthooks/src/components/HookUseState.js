@@ -15,7 +15,12 @@ const HookUseState = () => {
   //2 - useState e input
   const [age, setAge] = useState(18);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //Envio para uma API
 
+    console.log(age);
+  }
 
   return (
     <div>
@@ -28,9 +33,10 @@ const HookUseState = () => {
 
         {/* UseState e Input */}
         <p>Digite a sua idade:</p>
-        <form>
+        <form onSubmit={handleSubmit}>
             <input type="text"   id="" value={age} onChange={(e) => setAge(e.target.value)} />
             <p>Você tem: {age} anos!</p>
+            <input type="submit" value="Enviar" />
         </form>
     </div>
   )
