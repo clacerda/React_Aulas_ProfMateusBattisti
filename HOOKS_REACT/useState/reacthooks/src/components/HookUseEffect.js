@@ -6,11 +6,18 @@ const HookUseEffect = () => {
     useEffect(() => {
         console.log("Estou sendo executado")
     });
+
+
     const [number, setNumber] = useState(1)
 
     const changeSomenthing = () => {
         setNumber(number + 1)
     }
+
+    // 2 - array de dependências vazio
+    useEffect(() => {
+        console.log("Executado apenas 1 vez")
+    }, [])
 
   return (
     <div>
