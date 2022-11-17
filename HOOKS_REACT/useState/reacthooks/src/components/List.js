@@ -5,7 +5,7 @@ const List = ({getItems}) => {
     const [myItems, setMyItems] = useState([])
 
     useEffect(() => {
-        console.log("Buscando itens do DB...")
+     //   console.log("Buscando itens do DB...")
         setMyItems(getItems)
     }, [getItems])
 

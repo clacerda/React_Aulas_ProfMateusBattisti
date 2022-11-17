@@ -11,7 +11,7 @@ const HookUseMemo = () => {
     }, [])
 
     useEffect(() => {
-            console.log("Premium number alterado")
+        //    console.log("Premium number alterado")
     }, [premiumNumbers])
 
   return (
