@@ -27,7 +27,7 @@ const Home = () => {
         <h2>useContext</h2>
         <p>Valor context: {contextValue}</p>
         <hr />
-
+        {/* Hooks */}
         <HookUseRef />
         <HookUseCallback />
         <HookUseMemo />

@@ -3,7 +3,7 @@ import SomeComponent from '../components/SomeComponent'
 
 const HookUseImperativeHandle = () => {
 
-    const componenteRef = useRef();
+    const componenteRef = useRef(); 
 
   return (
     <div>
